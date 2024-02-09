@@ -21,9 +21,7 @@ html {
 body {
     font-family: "Roboto", "Arial Narrow Bold", sans-serif;
     color: var(--white-lux);
-    background: rgb(38,40,61);
-    background: radial-gradient(circle, var(--black-drak) ,var(--black-lightdrak) 100%);
-    background-attachment: fixed;
+    background-color: #ececec;
   
     min-height: 100vh;
     margin: 0 auto;
@@ -81,16 +79,37 @@ section {
     min-height: 430px;
     margin: 0;
     padding: 0;
+    z-index: -1;
+    background: var(--white-lux);
+    background: radial-gradient(circle, var(--white-lux) ,var(--white) 100%);
+    background-attachment: fixed;
 }
 
-.container {
-    padding: 50px;
-    border-radius: 10px;
-    border: 1px solid var(--pink-light);
-    transition: padding 0.5s ease-in-out;
+.sec-hero.bg-black {
+  background: rgb(38,40,61);
+  background: radial-gradient(circle, var(--black-drak) ,var(--black-lightdrak) 100%);
+  background-attachment: fixed;
+  transition: background 3s ease-in-out;
 }
 
-.container:hover {
+.container.container-show {
+  opacity: 1;
+  width: 100%;
+  padding: 50px;
+  border-radius: 10px;
+  border: 1px solid var(--pink-light);
+  transition: padding 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.container{
+  opacity: 0;
+  width: 10px;
+  padding: 0px;
+  border-radius: 0px;
+  transition: padding 0.5s ease-in-out, border-radius 0.5 ease-in-out, width 1s ease-in-out;
+}
+
+.container.container-show:hover {
     padding: 75px;
     transition: padding 0.5 ease-in-out;
 }
@@ -211,7 +230,7 @@ canvas{
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.2;
-    z-index: -1;
+    z-index: 0;
 }
 
 .dt1 {
@@ -224,8 +243,43 @@ canvas{
     left: 1000px;
 }
 
-.letter-base {
-  width: 100%;
-  height: 10px;
-  background-color: var(--white);
+.dotall {
+  opacity: 0;
+}
+
+.dotall.show {
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
+}
+
+.letter{
+  z-index: 100;
+}
+
+.letterpic {
+  aspect-ratio: 16/9;
+  width: 780px;
+  height: 360px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.letterpic {
+  cursor: pointer;
+  animation: floatAnimation 1s infinite alternate;
+}
+
+/* Keyframes for the floating animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.letter.fade-away {
+  transform: translateY(1800px) rotate(90deg);
+  opacity: 0;
+  transition: transform 1s ease-in-out, rotare 3s ease-in-out, opacity 1s ease-in-out 5s;
 }
