@@ -98,7 +98,7 @@ section {
   padding: 50px;
   border-radius: 10px;
   border: 1px solid var(--pink-light);
-  transition: padding 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: padding 0.8s cubic-bezier(0.075, 0.82, 0.165, 1), opacity .8s cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
 
 .container{
@@ -114,6 +114,39 @@ section {
     transition: padding 0.5 ease-in-out;
 }
 
+.Music {
+  position: fixed;
+  opacity: 0;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--pink-light);
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.Music.show{
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.mute {
+  background-color: pink; /* Set button background color to pink */
+  color: black; /* Set button text color to black */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@keyframes Heartbeat {
+  0% {
+    padding: 75px;
+  }
+  100% {
+    padding: 85px;
+  }
+}
 
 .relative {
     position: relative;
@@ -156,6 +189,7 @@ section {
     text-align: center;
     width: 550px;
     text-wrap: wrap;
+    padding: 1px
 }
 
 .hero-info h2 {
@@ -254,6 +288,14 @@ canvas{
 
 .letter{
   z-index: 100;
+}
+
+.letter p {
+  color: var(--black-lux);
+  animation: floatAnimation 1s infinite alternate;
+  text-align: center;
+  padding-top: 20px;
+  font-weight: 600;
 }
 
 .letterpic {

@@ -13,10 +13,11 @@
             <span class="dot dt1 absolute"></span>
             <span class="dot dt2 absolute"></span>
         </div>
-        <div class="letter absolute">
+        <div class="letter absolute" onclick="playAudio('audio-file1.mp3')">
             <img src="./img/lETTER.png" class="letterpic">
+            <p class="relative">Beware The Audio Volumn Before Click!</p>
         </div>
-        <div class="container grid gridCenter">
+        <div class="container grid gridCenter" id="container-beat">
             <div class="hero-header">
                 <h1>It's Valentine's Day</h1>
             </div>
@@ -25,11 +26,15 @@
                 <h2>Dear <span class="doge">Doge-gie</span> my wuv!</h2>
 
                 <p>On this special day, I wanted to express my love and appreciation for you. You mean the world to me, and I am grateful to have you in my life.</p>
-                <p>Here's a little surprise for you:</p>
+                <p>Here's a little surprise for you</p>
             </div>
-
-            <button class="button-64" role="button"><span class="text">Click Me!</span></button>
+            
+            <button onclick="Valentime(), removeAudio();" class="button-64" role="button"><span class="text">Click Me!</span></button>
         </div>
+        <button onclick="toggleMute()" class="Music">Mute</button>
+        <!-- <audio controls autoplay id="Music">
+            <source src="./img/sound/20230821_Lauv - Love U Like That [Official Video].webm">
+        </audio> -->
         <!-- <div class="picgrid">
             <div class="relative pos-1">
                 <div class="grid__item-img" style="background-image:url(.img/Carryme3.png)"></div>
