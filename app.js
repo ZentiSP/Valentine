@@ -45,7 +45,7 @@ function playAudio(audioFile) {
 
     // Set the volume (optional)
     audio.volume = 0.1;
-    audio.currentTime = 43;
+    audio.currentTime = 42.5;
 
     // Append the audio element to the body or any other desired container
     document.body.appendChild(audio);

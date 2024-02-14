@@ -21,7 +21,6 @@ html {
 body {
     font-family: "Roboto", "Arial Narrow Bold", sans-serif;
     color: var(--white-lux);
-    background-color: #ececec;
   
     min-height: 100vh;
     margin: 0 auto;
@@ -85,18 +84,28 @@ section {
     background-attachment: fixed;
 }
 
+@keyframes fadeIn {
+  from {
+    background: var(--white-lux);
+    background: radial-gradient(circle, var(--white-lux) ,var(--white) 100%);
+  }
+  to {
+    background: rgb(38,40,61);
+    background: radial-gradient(circle, var(--black-drak) ,var(--black-lightdrak) 100%);
+  }
+}
+
 .sec-hero.bg-black {
-  background: rgb(38,40,61);
-  background: radial-gradient(circle, var(--black-drak) ,var(--black-lightdrak) 100%);
-  background-attachment: fixed;
-  transition: background 3s ease-in-out;
+ 
+  animation: fadeIn 1.2s forwards;
+ 
 }
 
 .container.container-show {
   opacity: 1;
   width: 100%;
   padding: 50px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid var(--pink-light);
   transition: padding 0.8s cubic-bezier(0.075, 0.82, 0.165, 1), opacity .8s cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
@@ -187,7 +196,7 @@ section {
     font-size: 1.2rem;
     margin: 35px 0;
     text-align: center;
-    width: 550px;
+    width: 700px;
     text-wrap: wrap;
     padding: 1px
 }
@@ -324,4 +333,8 @@ canvas{
   transform: translateY(1800px) rotate(90deg);
   opacity: 0;
   transition: transform 1s ease-in-out, rotare 3s ease-in-out, opacity 1s ease-in-out 5s;
+}
+
+.reveal-container {
+  opacity: 0;
 }
