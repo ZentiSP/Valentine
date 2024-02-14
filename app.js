@@ -7,10 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const button64 = document.querySelector(".button-64");
 
   const Music1 =
-    "./img/sound/20230821_Lauv - Love U Like That [Official Video].webm";
+    "./sound/20230821_Lauv - Love U Like That [Official Video].webm";
 
   const Music2 =
-    "./img/sound/20230327_Infinitely Falling - Fly By Midnight (lyrics).webm";
+    "./sound/20230327_Infinitely Falling - Fly By Midnight (lyrics).webm";
+
+  const Video1 = "./video/valen.mp4";
 
   letter.addEventListener("click", function () {
     target.classList.add("container-show");
@@ -35,12 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
   button64.addEventListener("click", function () {
     Valentime();
     removeAudio();
-    setTimeout(function() {
-        playAudio(Music2, 0);
-    }, 2000);
+    playAudio(Music2, 0);
+    playVideo(Video1);
+    setTimeout(function () {
+        removeVideo();
+    }, 37500);
   });
 
-  Music.addEventListener("click", function() {
+  Music.addEventListener("click", function () {
     toggleMute();
   });
 
@@ -71,10 +75,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function playVideo() {
+    // Create audio element
+    const video = document.createElement("video");
+
+    // Use local file
+    // video.src = 'video.mp4';
+
+    // Use remote file
+    video.src = "./video/valen.mp4";
+
+    video.controls = false;
+    video.muted = false;
+    video.autoplay = true;
+
+    const box = document.getElementById("box");
+
+    // Include in HTML as child of #box
+    box.appendChild(video);
+  }
+
   function toggleMute() {
     // Get the audio element by its ID
     var audioElement = document.getElementById("myAudio");
+    var videoElement = document.getElementById("myVideo");
 
+    if (videoElement) {
+      // Toggle the mute state
+      videoElement.muted = !videoElement.muted;
+    }
     // Check if the audio element exists
     if (audioElement) {
       // Toggle the mute state
@@ -95,9 +124,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function removeVideo() {
+    // Get the audio element by its ID
+    var videoElement = document.getElementById("box");
+
+    // Check if the audio element exists
+    if (videoElement) {
+      // Remove the audio element from its parent node
+      videoElement.parentNode.removeChild(videoElement);
+    } else {
+      console.error("Video element not found.");
+    }
+  }
+
   function Valentime() {
     target.parentNode.removeChild(target);
     dotall.classList.remove("show");
+    hero.classList.remove("bg-black");
   }
 
   function breathe() {

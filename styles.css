@@ -21,6 +21,7 @@ html {
 body {
     font-family: "Roboto", "Arial Narrow Bold", sans-serif;
     color: var(--white-lux);
+    background-color: transparent;
   
     min-height: 100vh;
     margin: 0 auto;
@@ -337,5 +338,11 @@ canvas{
 
 .reveal-container {
   z-index: -2;
-  opacity: 0;
+  opacity: 1;
+}
+
+.box{
+  opacity: 1;
+  height: 100%;
+  width: 100%;
 }
