@@ -336,13 +336,23 @@ canvas{
   transition: transform 1s ease-in-out, rotare 3s ease-in-out, opacity 1s ease-in-out 5s;
 }
 
-.reveal-container {
-  z-index: -2;
-  opacity: 1;
-}
-
 .box{
   opacity: 1;
   height: 100%;
   width: 100%;
+}
+
+.reveal-container{
+  z-index: -99;
+  opacity: 0;
+}
+
+.reveal-container.show{
+  z-index: 0;
+  opacity: 1;
+}
+
+.reveal-container.show h1 {
+ z-index: 5;
+ color: var(--pink-light);
 }

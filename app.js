@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const hero = document.querySelector(".sec-hero");
   const Music = document.querySelector(".Music");
   const button64 = document.querySelector(".button-64");
+  const reavelC = document.querySelector(".reveal-container")
 
   const Music1 =
     "./sound/20230821_Lauv - Love U Like That [Official Video].webm";
@@ -41,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
     playVideo(Video1);
     setTimeout(function () {
         removeVideo();
+        createImg();
+        reavelC.classList.add("show");
     }, 37500);
   });
 
@@ -93,6 +96,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Include in HTML as child of #box
     box.appendChild(video);
+  }
+
+  function createImg() {
+    const pic = document.createElement("img");
+
+    pic.src = "./img/Fallin4.png";
+    pic.classList.add("picfall");
+    pic.alt = 'Description of the image';
+
+    const reveal = document.getElementById("rv");
+
+    reveal.appendChild(pic);
   }
 
   function toggleMute() {
