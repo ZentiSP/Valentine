@@ -215,6 +215,7 @@ section {
 
 /* CSS */
 .button-64 {
+  z-index: 10;
   align-items: center;
   background-image: linear-gradient(144deg,var(--pink-light)25%,var(--blue-light));
   border: 0;
@@ -288,6 +289,7 @@ canvas{
 }
 
 .dotall {
+  z-index: 0;
   opacity: 0;
 }
 
@@ -343,6 +345,7 @@ canvas{
 }
 
 .reveal-container{
+  zoom: 80%;
   z-index: -99;
   opacity: 0;
 }
@@ -354,5 +357,15 @@ canvas{
 
 .reveal-container.show h1 {
  z-index: 5;
- color: var(--pink-light);
+ color: transparent;
+ font-size: 5rem;
+ background: rgb(38,40,61);
+ background: radial-gradient(circle, var(--pink-light) 65% ,#9fbcf6);
+ background-clip: text;
+}
+
+.reveal-container.show p {
+  z-index: 5;
+  font-size: 3.25rem;
+  color: #ececec;
 }
