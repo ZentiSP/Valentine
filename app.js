@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function Valentime() {
-    target.classList.remove("container-show");
+    target.parentNode.removeChild(target);
     dotall.classList.remove("show");
   }
 
