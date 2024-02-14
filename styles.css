@@ -336,5 +336,6 @@ canvas{
 }
 
 .reveal-container {
+  z-index: -2;
   opacity: 0;
 }
