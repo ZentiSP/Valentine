@@ -38,8 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
   button64.addEventListener("click", function () {
     Valentime();
     removeAudio();
-    playAudio(Music2, 0);
     playVideo(Video1);
+    if (document.getElementById("video2")) {
+        playAudio(Music2, 0);
+    }
     setTimeout(function () {
         removeVideo();
         createImg();
@@ -87,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Use remote file
     video.src = "./video/valen.mp4";
-
+    video.id = "video2";
     video.controls = false;
     video.muted = false;
     video.autoplay = true;
