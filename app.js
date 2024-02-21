@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     video.controls = false;
     video.muted = false;
     video.autoplay = true;
+    video.preload = "auto";
 
     const box = document.getElementById("box");
 
